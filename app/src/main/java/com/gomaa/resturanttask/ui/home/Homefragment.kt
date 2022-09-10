@@ -33,7 +33,7 @@ class Homefragment(
         binding = FragmentHomefragmentBinding.inflate(layoutInflater)
         binding.lifecycleOwner = viewLifecycleOwner
 
-        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
         SetUpViews()
 
 

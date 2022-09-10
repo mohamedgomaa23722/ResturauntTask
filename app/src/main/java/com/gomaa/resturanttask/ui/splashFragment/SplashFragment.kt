@@ -26,7 +26,7 @@ class SplashFragment : Fragment() {
         val binding = FragmentSplashBinding.inflate(layoutInflater)
         binding.lifecycleOwner=this
 
-        val viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        val viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
         binding.splashViewModel = viewModel
 
         lifecycleScope.launchWhenStarted {

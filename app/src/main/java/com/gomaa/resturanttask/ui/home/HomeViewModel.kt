@@ -78,7 +78,6 @@ class HomeViewModel @Inject constructor(private val repository: Repository) : Vi
         repository.BestOffers()
             .catch { e ->
                 _statue.value = ApiResult.Error(e.message!!)
-                Log.d("connection error", "refreshOffers: ${e.message}")
             }.collect { data ->
                 _vendorMutableList.value = listOf(data.GetPercentageForVendors.data[0].restaurants)
                 _lastOffersMutableList.value = data.lastOffers.data
@@ -86,10 +85,6 @@ class HomeViewModel @Inject constructor(private val repository: Repository) : Vi
                 _nearestBranchMutableList.value = data.GetNearestBranch.data
                 _freeDeliveryBranchesMutableList.value = data.GetFreeDeliveryBranches.data
                 _mostOrderedBranchesMutableList.value = data.mostOrderedBranch.data
-
-                for(i in _mostOrderedBranchesMutableList.value){
-                    Log.d("last test", "refreshOffers: logo: ${i.branches.restaurant.restaurantLogo}, name:${i.branches.restaurant.restaurantName}, cover:${i.branches.restaurant.restaurantCover}, id: ${i.branches.restaurant.restaurantId} ")
-                }
             }
     }
 
