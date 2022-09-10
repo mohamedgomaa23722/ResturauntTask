@@ -1,4 +1,4 @@
-package com.gomaa.resturanttask.data.Ads
+package com.gomaa.resturanttask.data.ads
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

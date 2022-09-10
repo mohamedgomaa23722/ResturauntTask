@@ -1,4 +1,4 @@
-package com.gomaa.resturanttask.data.Resturants
+package com.gomaa.resturanttask.data.restaurants
 
 import com.squareup.moshi.Json
 

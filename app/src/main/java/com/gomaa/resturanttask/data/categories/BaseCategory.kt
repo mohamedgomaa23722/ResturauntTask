@@ -1,7 +1,6 @@
-package com.gomaa.resturanttask.data.Categories
+package com.gomaa.resturanttask.data.categories
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
 
 interface  BaseCategory{
     @Json(name = "id")

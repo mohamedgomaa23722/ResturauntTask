@@ -1,8 +1,8 @@
-package com.gomaa.resturanttask.data.Resturants
+package com.gomaa.resturanttask.data.restaurants
 
 import com.squareup.moshi.Json
 
-data class subResturant(
+data class SubResturant(
     @Json(name = "RestauranthId")
     override val restaurantId:Int,
     @Json(name = "name")

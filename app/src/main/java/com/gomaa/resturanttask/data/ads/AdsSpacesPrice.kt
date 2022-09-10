@@ -1,4 +1,4 @@
-package com.gomaa.resturanttask.data.Ads
+package com.gomaa.resturanttask.data.ads
 
 data class AdsSpacesPrice(
     val id:Int,

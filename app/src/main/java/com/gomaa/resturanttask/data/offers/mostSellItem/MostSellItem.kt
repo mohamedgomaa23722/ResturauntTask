@@ -1,6 +1,6 @@
 package com.gomaa.resturanttask.data.offers.MostSellItem
 
-import com.gomaa.resturanttask.data.Categories.MenuCategory
+import com.gomaa.resturanttask.data.categories.MenuCategory
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
