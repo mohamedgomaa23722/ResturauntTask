@@ -3,8 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1366906474820144" />
+        <entry key="app/src/main/res/drawable/default_indicator.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/indecator_selector.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/selected_indicator.xml" value="0.228" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/branch_item.xml" value="0.18478260869565216" />
         <entry key="app/src/main/res/layout/category_item.xml" value="0.2826086956521739" />
+        <entry key="app/src/main/res/layout/dishes_item.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/fragment_homefragment.xml" value="0.21252204585537918" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/loading_view.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/offers_item.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/resturant_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/slider_item.xml" value="0.31979166666666664" />
       </map>
     </option>
   </component>

@@ -1,27 +1,18 @@
 package com.gomaa.resturanttask.Utils
 
 import android.annotation.SuppressLint
-import okhttp3.OkHttpClient
+import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
-import java.lang.Exception
-import java.lang.RuntimeException
 import java.security.SecureRandom
 import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
 import javax.net.ssl.*
 
+
 /**
  * initialize looger for logging Body_Level
  */
 val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-
-/**
- * build our ok http client and pass header into it
- */
-val  okHttp = getUnsafeOkHttpClient().addInterceptor(logger).addInterceptor {
-    val Request = it.request().newBuilder().addHeader("lang", "en").build()
-    it.proceed(Request)
-}.build()
 
 /**
  * This fun is not secured help us to use nonConfig or missing ssl from server side

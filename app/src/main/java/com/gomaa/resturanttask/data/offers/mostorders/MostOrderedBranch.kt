@@ -1,7 +1,6 @@
-package com.gomaa.resturanttask.data.offers.mostOrderBranches
+package com.gomaa.resturanttask.data.offers.mostorders
 
 import com.gomaa.resturanttask.data.offers.BaseOffer
-import com.gomaa.resturanttask.data.restaurants.FullResturant
 
 data class MostOrderedBranch(
     override val title: String,

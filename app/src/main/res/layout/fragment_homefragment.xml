@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gomaa.resturanttask.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.Homefragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/parentView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewVisible="@{viewModel.statue}">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/AdsSlider"
+                    android:layout_width="0dp"
+                    android:layout_height="190dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/AdsSlider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tabBackground="@drawable/indecator_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/CategoryList"
+                    style="@style/HorizontalRecyclerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/CategoryTitle"
+                    app:listData="@{viewModel.categoryLiveData}"
+                    tools:listitem="@layout/category_item" />
+
+
+                <TextView
+                    android:id="@+id/CategoryTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/Category"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indicator" />
+
+                <TextView
+                    android:id="@+id/VendorTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/VendorTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/CategoryList" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/VendorList"
+                    style="@style/HorizontalRecyclerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/VendorTitle"
+                    app:listData="@{viewModel.vendorData}"
+                    tools:listitem="@layout/resturant_item" />
+
+                <TextView
+                    android:id="@+id/LastOfferTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/lastOffer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/VendorList" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/LastOffersList"
+                    style="@style/HorizontalRecyclerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LastOfferTitle"
+                    app:listData="@{viewModel.lastOffersData}"
+                    tools:listitem="@layout/resturant_item" />
+                <TextView
+                    android:id="@+id/MostBranchTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/mostOrder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LastOffersList" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/MostBranchList"
+                    style="@style/HorizontalRecyclerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/MostBranchTitle"
+                    app:listData="@{viewModel.mostOrderedBranchesData}"
+                    tools:listitem="@layout/dishes_item" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/MidAdsSlider"
+                    android:layout_width="0dp"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/MostBranchList" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/Midindicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/MidAdsSlider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tabBackground="@drawable/indecator_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+                <TextView
+                    android:id="@+id/MostSellTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/mostSell"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/MidAdsSlider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/MostSellList"
+                    style="@style/HorizontalRecyclerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/MostSellTitle"
+                    app:listData="@{viewModel.mostSellItemsData}"
+                    tools:listitem="@layout/dishes_item" />
+
+                <TextView
+                    android:id="@+id/NearestBranchTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/nearest"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/MostSellList" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/NearestBranchList"
+                    style="@style/HorizontalRecyclerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/NearestBranchTitle"
+                    app:listData="@{viewModel.nearestBranchData}"
+                    tools:listitem="@layout/resturant_item" />
+
+                <TextView
+                    android:id="@+id/FreeDeliveryBranchesTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/freeDelivery"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/NearestBranchList" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FreeDeliveryBranchesList"
+                    style="@style/HorizontalRecyclerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FreeDeliveryBranchesTitle"
+                    app:listData="@{viewModel.freeDeliveryBranchesData}"
+                    tools:listitem="@layout/resturant_item" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/BottomdSlider"
+                    android:layout_width="0dp"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FreeDeliveryBranchesList" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/Bottomindicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/BottomdSlider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tabBackground="@drawable/indecator_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

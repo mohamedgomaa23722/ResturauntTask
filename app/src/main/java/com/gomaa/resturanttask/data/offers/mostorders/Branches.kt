@@ -1,4 +1,4 @@
-package com.gomaa.resturanttask.data.offers.mostOrderBranches
+package com.gomaa.resturanttask.data.offers.mostorders
 
 import com.gomaa.resturanttask.data.restaurants.SubRestaurant
 import com.squareup.moshi.Json

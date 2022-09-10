@@ -1,6 +1,6 @@
 package com.gomaa.resturanttask.data.offers
 
-import com.gomaa.resturanttask.data.Resturants.FullResturant
+import com.gomaa.resturanttask.data.restaurants.FullResturant
 import com.squareup.moshi.JsonClass
 
 /**

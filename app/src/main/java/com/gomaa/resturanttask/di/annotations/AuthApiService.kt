@@ -4,4 +4,8 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class AuthApiService
+annotation class AuthApiServicePost
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class AuthApiServiceGet

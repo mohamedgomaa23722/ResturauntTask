@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AnAutomaticAndroidSlider" parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="TitleStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="HorizontalRecyclerStyle">
+        <item name="android:orientation">horizontal</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+</resources>

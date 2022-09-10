@@ -4,5 +4,8 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class AuthInterceptorOkHttpClient
+annotation class AuthInterceptorOkHttpClientPost
 
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class AuthInterceptorOkHttpClientGet

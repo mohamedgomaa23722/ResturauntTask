@@ -3,11 +3,9 @@ package com.gomaa.resturanttask.network
 import com.gomaa.resturanttask.Utils.Constants.CATEGORY_END_POINT
 import com.gomaa.resturanttask.Utils.Constants.MAIN_SLIDER_END_POINT
 import com.gomaa.resturanttask.Utils.Constants.OFFERS_END_POINT
-import com.gomaa.resturanttask.data.Ads.AdsResponse
-import com.gomaa.resturanttask.data.Categories.Category
+import com.gomaa.resturanttask.data.ads.AdsResponse
+import com.gomaa.resturanttask.data.categories.Category
 import com.gomaa.resturanttask.data.offers.OfferResponse
-import okhttp3.RequestBody
-import org.json.JSONObject
 import retrofit2.http.*
 
 interface ServiceApi {
@@ -17,7 +15,7 @@ interface ServiceApi {
      * in form of Ads data class.
      */
     @POST(MAIN_SLIDER_END_POINT)
-    suspend fun PostSliderData(@Body body:RequestBody):List<AdsResponse>
+    suspend fun PostSliderData():List<AdsResponse>
 
     /**
      * This suspend function send get request to the server to receive
@@ -31,6 +29,6 @@ interface ServiceApi {
      * data.
      */
     @POST(OFFERS_END_POINT)
-    suspend fun PostOffersData(@Body body:RequestBody):OfferResponse
+    suspend fun PostOffersData():OfferResponse
 
 }

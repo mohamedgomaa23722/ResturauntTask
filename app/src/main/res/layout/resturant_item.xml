@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="resturant"
+            type="com.gomaa.resturanttask.data.restaurants.FullResturant" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="3dp">
+
+            <RelativeLayout
+                android:layout_width="280dp"
+                android:layout_height="120dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/restaurant_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:loadImage="@{resturant.restaurantCover}" />
+
+                <ImageView
+                    android:id="@+id/restaurant_logo"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/restaurant_image"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="fitXY"
+                    app:loadImage="@{resturant.restaurantLogo}" />
+
+                <TextView
+                    android:id="@+id/restaurant_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/restaurant_image"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:layout_toStartOf="@+id/restaurant_logo"
+                    android:text="@{resturant.restaurantName}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="ارابياتا" />
+
+                <TextView
+                    android:id="@+id/restaurant_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/restaurant_statue"
+                    android:layout_below="@+id/restaurant_image"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/ic_baseline_star_border_24"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(resturant.rate)}"
+                    android:textColor="#EEBC00"
+                    android:textSize="11sp"
+                    tools:text="0.0" />
+
+                <TextView
+                    android:id="@+id/restaurant_statue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/holo_green_light"
+                    android:textSize="11sp"
+                    app:RestaurantStatue="@{resturant.isOpen}"
+                    tools:text="(مغلق)" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</layout>

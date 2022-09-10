@@ -1,7 +1,7 @@
 package com.gomaa.resturanttask.Utils
 
 sealed class ApiResult <out T> {
-    data class Success<out R>(val data: R?): ApiResult<R>()
+    object  Success:ApiResult<Nothing>()
     data class Error(val message: String): ApiResult<Nothing>()
     object Loading: ApiResult<Nothing>()
 }

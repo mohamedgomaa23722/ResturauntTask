@@ -1,8 +1,7 @@
 package com.gomaa.resturanttask.di.Modules
 
 import com.gomaa.resturanttask.Utils.Constants.BASE_URL
-import com.gomaa.resturanttask.di.annotations.AuthApiService
-import com.gomaa.resturanttask.di.annotations.AuthInterceptorOkHttpClient
+import com.gomaa.resturanttask.di.annotations.*
 import com.gomaa.resturanttask.network.ServiceApi
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -29,11 +28,14 @@ object NetworkModule {
         .add(KotlinJsonAdapterFactory())
         .build()
 
-    @AuthApiService
+    /**
+     * Provide The Post Module Service which handle Get request with  pass body and header
+     */
+    @AuthApiServicePost
     @Provides
     @Singleton
-    fun ProvideApiService(
-        @AuthInterceptorOkHttpClient okHttpClient: OkHttpClient
+    fun ProvideApiServicePost(
+        @AuthInterceptorOkHttpClientPost okHttpClient: OkHttpClient
     ): ServiceApi {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -44,4 +46,21 @@ object NetworkModule {
             .build().create(ServiceApi::class.java)
     }
 
+    /**
+     * Provide The Get Module Service which handle Get request with out pass body
+     */
+    @AuthApiServiceGet
+    @Provides
+    @Singleton
+    fun ProvideApiServiceGet(
+        @AuthInterceptorOkHttpClientGet okHttpClient: OkHttpClient
+    ): ServiceApi {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi()))
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .client(okHttpClient)
+            .build().create(ServiceApi::class.java)
+    }
 }

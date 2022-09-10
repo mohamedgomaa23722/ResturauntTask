@@ -1,4 +1,4 @@
-package com.gomaa.resturanttask.data.offers.mostOrderBranches
+package com.gomaa.resturanttask.data.offers.mostorders
 
 data class MostOrdered(
     val delivery_time: Int,

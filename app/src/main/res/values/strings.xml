@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">ResturantTask</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="VendorTitle">Vendors 50% Discount</string>
+    <string name="Category">Category</string>
+    <string name="lastOffer">Last offers</string>
+    <string name="mostSell">Most Sell Food</string>
+    <string name="nearest">Nearest Branches</string>
+    <string name="freeDelivery">Free Delivery</string>
+    <string name="mostOrder">Most Ordered Branches</string>
+    <string name="closed">closed</string>
+    <string name="open">open</string>
 
 </resources>
 
